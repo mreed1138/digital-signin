@@ -1,6 +1,6 @@
 <?php
 	include("connection.php");
-//here this was added
+//here this was added and boy was it added
 ?>
 <!DOCTYPE html>
 <html lang="en">
