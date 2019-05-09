@@ -20,13 +20,8 @@
 		$found = $mysqli->query($closeAttendance);
 		var_dump($found->num_rows);		
 	endwhile;
-	//echo "close";
+
 	else:
-
-	
-
-
-	//echo $i;
 
 	$data = substr($i, strpos($i, ",") + 1);
 	$decodedData = base64_decode($data);
@@ -34,8 +29,6 @@
 	$fp = fopen($file, 'wb');
 	fwrite($fp, $decodedData);
 	fclose();
-	//echo "signatures/{$s}-{$c}-{$w}.png";
-
 
 	$insert = "INSERT INTO `attendance` (`stu_id`, `course_id`, `week`, `attend`,`sig`) VALUES ({$s},{$c},{$w},1,'{$file}')";
 	$save = $mysqli->query($insert);
